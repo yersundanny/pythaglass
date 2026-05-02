@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* 좀비 아포칼립스 & 키치 팝 컬러 팔레트 */
     --bg-dark: #111111;
     --toxic-green: #CCFF00;
     --neon-pink: #FF007F;
@@ -35,7 +34,14 @@
     text-transform: uppercase;
   }
 
-  /* 네오 브루탈리즘 스타일 버튼 */
+  /* 이미지 박스 내부 이미지 최적화 */
+  .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
   .btn {
     display: inline-block;
     background-color: var(--toxic-green);
@@ -56,7 +62,6 @@
     box-shadow: 2px 2px 0px var(--neon-pink);
   }
 
-  /* 키치한 띠 배너 (흐르는 글씨) */
   .marquee-tape {
     background-color: var(--bio-orange);
     color: var(--black);
@@ -80,7 +85,6 @@
     100% { transform: translateX(-100%); }
   }
 
-  /* 네비게이션바 */
   nav {
     position: sticky;
     top: 0;
@@ -115,7 +119,6 @@
   }
   .btn-small:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--black); }
 
-  /* 이미지 플레이스홀더 (네오 브루탈리즘 액자) */
   .img-box {
     background-color: var(--bg-dark);
     border: 4px solid var(--black);
@@ -124,7 +127,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 0; /* 이미지 삽입을 위해 패딩 제거 */
     font-weight: 800;
     color: var(--white);
     position: relative;
@@ -132,9 +135,6 @@
     background-image: repeating-linear-gradient(45deg, #1a1a1a 0, #1a1a1a 2px, transparent 2px, transparent 8px);
   }
 
-  /* ----------------------------------
-     섹션 1: 메인 히어로
-  ----------------------------------- */
   .hero {
     padding: 100px 5%;
     display: grid;
@@ -156,9 +156,6 @@
     color: var(--toxic-green);
   }
 
-  /* ----------------------------------
-     섹션 2: 철학과 행복 (바다 배경 파트)
-  ----------------------------------- */
   .philosophy {
     background-color: var(--deep-purple);
     padding: 100px 5%;
@@ -188,9 +185,6 @@
     line-height: 1.8;
   }
 
-  /* ----------------------------------
-     섹션 3: 컨셉 & 탄생 (The Birth)
-  ----------------------------------- */
   .concept {
     padding: 100px 5%;
     background-color: var(--bg-dark);
@@ -209,7 +203,6 @@
     gap: 40px;
   }
   
-  /* 키치한 스티커 태그들 */
   .sticker-board {
     display: flex;
     flex-wrap: wrap;
@@ -232,9 +225,6 @@
   .sticker:nth-child(odd) { background-color: var(--bio-orange); transform: rotate(-3deg); }
   .sticker:nth-child(3n) { background-color: var(--white); }
 
-  /* ----------------------------------
-     섹션 4: 스케치 & 디자인 (Finding Happiness)
-  ----------------------------------- */
   .process {
     background-color: var(--white);
     color: var(--black);
@@ -269,9 +259,6 @@
     margin: 20px 0 10px;
   }
 
-  /* ----------------------------------
-     섹션 5: 패키징 & 샵 (Buy Now)
-  ----------------------------------- */
   .shop {
     background-color: var(--neon-pink);
     color: var(--black);
@@ -301,7 +288,6 @@
     transform: rotate(-2deg);
   }
 
-  /* 푸터 */
   footer {
     background-color: var(--black);
     padding: 50px 5%;
@@ -310,7 +296,6 @@
     border-top: 5px solid var(--toxic-green);
   }
 
-  /* 반응형 */
   @media (max-width: 900px) {
     .nav-text { display: none; }
     .hero, .sketch-grid, .final-design-grid, .shop-container { grid-template-columns: 1fr; }
@@ -341,14 +326,14 @@
       <a href="#shop" class="btn">GET YOUR ARTIFACT ➔</a>
     </div>
     <div class="img-box" style="height: 500px; box-shadow: 12px 12px 0px var(--bio-orange);">
-      <span style="color: var(--toxic-green);">[캡쳐 1 : 손에 쥔 피타글래스 이미지 삽입]</span>
+      <img src="images/img1.jpg" alt="Pythaglass Hero">
     </div>
   </section>
 
   <section id="philosophy" class="philosophy">
     <h2 class="title-font">PYTHAGLASS WILL MAKE YOU HAPPY</h2>
     <div class="img-box" style="max-width: 800px; height: 250px; margin: 0 auto; box-shadow: 8px 8px 0px var(--neon-pink);">
-      <span>[캡쳐 2 : 바다 물결 배경 이미지 삽입]</span>
+      <img src="images/img2.jpg" alt="Ocean Harmony">
     </div>
     
     <h3 class="title-font">"WHY DOES A&sup2; + B&sup2; = C&sup2; MAKE US HAPPY?"</h3>
@@ -363,9 +348,9 @@
   <section class="concept">
     <h2 class="section-title">THE BIRTH OF PYTHAGLASS</h2>
     <div class="birth-grid">
-      <div class="img-box" style="height: 300px;"><span>[캡쳐 3 : 고대 원형 경기장 이미지]</span></div>
-      <div class="img-box" style="height: 300px;"><span>[캡쳐 3 : 고대 학자들 이미지]</span></div>
-      <div class="img-box" style="height: 300px;"><span>[캡쳐 3 : 피타고라스 합성 이미지]</span></div>
+      <div class="img-box" style="height: 300px;"><img src="images/img3.jpg" alt="Ancient Arena"></div>
+      <div class="img-box" style="height: 300px;"><img src="images/img4.jpg" alt="Ancient Scholars"></div>
+      <div class="img-box" style="height: 300px;"><img src="images/img5.jpg" alt="Pythagoras Montage"></div>
     </div>
 
     <div class="sticker-board">
@@ -378,8 +363,8 @@
     </div>
 
     <div style="display: flex; justify-content: space-around; margin-top: 50px;">
-      <div class="img-box" style="width: 150px; height: 150px; border-radius: 50%;"><span>[피라미드 일러스트]</span></div>
-      <div class="img-box" style="width: 200px; height: 250px; border-radius: 20px;"><span>[피타고라스 석상]</span></div>
+      <div class="img-box" style="width: 150px; height: 150px; border-radius: 50%;"><img src="images/img6.jpg" alt="Pyramid Illustration"></div>
+      <div class="img-box" style="width: 200px; height: 250px; border-radius: 20px;"><img src="images/img7.jpg" alt="Pythagoras Statue"></div>
     </div>
   </section>
 
@@ -390,25 +375,25 @@
         <p style="font-size: 1.2rem; font-weight: 600;">아이디어의 시작. 추상적인 공식을 물리적인 즐거움으로 바꾸는 스케치 과정.</p>
       </div>
       <div class="sketch-images">
-        <div class="img-box" style="height: 200px; box-shadow: 6px 6px 0px var(--black);"><span>[캡쳐 3 : 아이디어 스케치 1]</span></div>
-        <div class="img-box" style="height: 200px; box-shadow: 6px 6px 0px var(--black);"><span>[캡쳐 3 : 아이디어 스케치 2]</span></div>
-        <div class="img-box" style="height: 200px; box-shadow: 6px 6px 0px var(--black);"><span>[캡쳐 3 : 아이디어 스케치 3]</span></div>
+        <div class="img-box" style="height: 200px; box-shadow: 6px 6px 0px var(--black);"><img src="images/img8.jpg" alt="Sketch 1"></div>
+        <div class="img-box" style="height: 200px; box-shadow: 6px 6px 0px var(--black);"><img src="images/img9.jpg" alt="Sketch 2"></div>
+        <div class="img-box" style="height: 200px; box-shadow: 6px 6px 0px var(--black);"><img src="images/img10.jpg" alt="Sketch 3"></div>
       </div>
     </div>
 
     <h2 class="section-title">FINAL DESIGN: PYTHAGLASS</h2>
     <div class="img-box" style="max-width: 400px; height: 150px; margin: 0 auto; background: var(--white); color: var(--black);">
-      <span>[캡쳐 3 : 피타글래스 라인 로고 이미지]</span>
+      <img src="images/img11.jpg" alt="Line Logo" style="object-fit: contain;">
     </div>
 
     <div class="final-design-grid">
       <div class="step-card">
-        <div class="img-box" style="height: 250px; background: var(--white); box-shadow: none;"><span>[캡쳐 3 : 스텝 1 이미지]</span></div>
+        <div class="img-box" style="height: 250px; background: var(--white); box-shadow: none;"><img src="images/img12.jpg" alt="Step 1"></div>
         <h4>STEP 1</h4>
         <p>A simple connection makes the perfect balance. Just plug them together.</p>
       </div>
       <div class="step-card" style="background: var(--toxic-green);">
-        <div class="img-box" style="height: 250px; background: var(--white); box-shadow: none;"><span>[캡쳐 3 : 스텝 2 (모래) 이미지]</span></div>
+        <div class="img-box" style="height: 250px; background: var(--white); box-shadow: none;"><img src="images/img13.jpg" alt="Step 2"></div>
         <h4>SATISFACTION</h4>
         <p>Fill the sand, watch the magic happen. The perfect desk companion.</p>
       </div>
@@ -428,7 +413,7 @@
         <div class="stamp-box">
           <h4 style="font-family: 'Syne', sans-serif; font-size: 1.5rem; color: var(--neon-pink); margin-bottom: 10px;">STAMP SENTENCE</h4>
           <div class="img-box" style="height: 100px; background: var(--white); color: var(--black); box-shadow: none;">
-            <span>[캡쳐 3 : 로고 스탬프 컷]</span>
+            <img src="images/img14.jpg" alt="Stamp Shot" style="object-fit: contain;">
           </div>
         </div>
 
@@ -436,7 +421,7 @@
       </div>
 
       <div class="img-box" style="height: 500px; background: var(--white); box-shadow: 12px 12px 0px var(--black);">
-        <span style="color: var(--bio-orange);">[캡쳐 3 : 크래프트 박스 패키징 사진]</span>
+        <img src="images/img15.jpg" alt="Kraft Package">
       </div>
     </div>
   </section>
@@ -448,7 +433,7 @@
   <footer>
     <div style="display: flex; justify-content: center; margin-bottom: 40px;">
       <div class="img-box" style="width: 300px; height: 120px; box-shadow: none; border: 2px dashed var(--toxic-green);">
-        <span style="color: var(--toxic-green);">[캡쳐 3 : 고대 신전 스케치]</span>
+        <img src="images/img16.jpg" alt="Ancient Temple Sketch" style="object-fit: contain;">
       </div>
     </div>
     <p style="font-family: 'Syne', sans-serif; font-size: 1.2rem; letter-spacing: 2px;">© 2026 PYTHAGLASS. ALL RIGHTS RESERVED.</p>
